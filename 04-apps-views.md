@@ -70,7 +70,7 @@ def even_or_odd(request, in_number):
 
 ## STEP 4. APP folder urls.py Configuration
 * Create an new file `urls.py` in the APP folder
-* ![django app create urls](django-app-create-urls-py.png "django app create urls")
+* ![python django app folder structure urls](python-django-app-folder-structure-urls.png "python django app folder structure urls")
 * Add the following code
 ```
 from django.urls import path
@@ -87,7 +87,7 @@ urlpatterns = [
     # For URL: localhost:8000/view_string_param and view function: view_string_param
     # Usage Example URL: localhost:8000/view_string_param/Hello
     path('view_string_param/<str:in_data>', views.view_string_param, name='view_string_param'),
-    
+
     # For URL: localhost:8000/even_or_odd and view function: even_or_odd
     # Usage Example URL: localhost:8000/even_or_odd/1
     path('even_or_odd/<int:in_number>', views.even_or_odd, name='even_or_odd'),

@@ -20,26 +20,26 @@ ContentName: django-tutorials
 * Make sure the computer is connected to the internet, and at the commandline 
   enter: `pip install django`
 
-
 ## [Creating Django Project](create-project.html)
 * Django Organizes a single website as a project
 * Below are the steps to Create and Run a New Django Project
 
-
 ## [Creating Django Apps](django-apps.html)
-*
-*
-
-
-## [Django URLs](django-urls.html)
-*
-*
-
+* In Django every **PROJECT** is made up of **APPs**,  They are the independent 
+  control mechanisms to handle pages and sub folders of the web project.
 
 ## [Django Views](django-views.html)
-*
-*
+* The VIEW is the webpage itself ina Django project, Its a Web response 
+  Retun object of a python function 
+* The web response (HttpResponse Oject) renders to the HTML.
 
+## [Django Splitting Views Into multiple files](django-apps-multiple-view-files.html)
+* For easy managability and scalability, Django enables users to split the 
+  views.py into multiple files.
+
+## [Django Views Response Types](django-views-response-types.html)
+*
+*
 
 ## [Django Templates](django-templates.html)
 *
