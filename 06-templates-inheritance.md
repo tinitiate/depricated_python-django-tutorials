@@ -8,48 +8,37 @@ ContentName: django-template-inheritance
 ---
 
 # Django Template Inheritance
-* Template Inheritance is a concept where Templates can be divided into 
+* Template Inheritance is a concept where Templates can be divided into called
   multiple files, Where **Template Blocks** or template functions, those can be 
-  called multiple times are placed in one file and the base HTML in another.
-* Below are the steps to demonstrate the Template Inheritance
-* **FOLDER PATH REFERENCE**
-* TINITIATE
-*     -  /tinitiate
-*        - /__pycache__
-*        - __init__.py
-*        - **settings.py**
-*        - **urls.py**
-*        - wsgi.py       
-*     -   manage.py
-*
-*     -  /rootpages
-*        - /__pycache__
-*        - /migrations
-*        - __init__.py
-*        - admin.py
-*        - apps.py
-*        - models.py
-*        - tests.py
-*        - **urls.py**
-*        - views.py
-*     -  /template_test
-*        - /__pycache__
-*        - /migrations
-*        - /templates
-*          - simple-template.html
-*          - template-blocks.html
-*          - blocks-caller.html
-*        - __init__.py
-*        - admin.py
-*        - apps.py
-*        - models.py
-*        - tests.py
-*        - **urls.py**
-*        - views.py
+  multiple times are placed in one file and the base Template HTML in another.
 
+## Demonstration for Django HTML Template Inheritance
 
-## STEP 1. Django HTML Templates Inheritance
-* **Base HTML Template**, Place this in the Templates Folder
+## STEP 1. Create Django APP To Demonstrate Django HTML Templates
+* Navigate to the Project Folder `tinitiate` and in the path that has the 
+  `manage.py` file.
+* Create an **APP** named `app_django_templates_inheritance`
+* Using the following command.
+```
+python manage.py startapp app_django_templates_inheritance
+```
+
+### STEP 2. Edit Project level settings.py file for Template Data
+* Add Template Directory details to the Projects `settings.py`
+  `'DIRS': ['F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_django_html_templates\\templates'],`
+* Add Static Files Directory, that will be used to host static libraries like 
+  jQuery or Angular or custom CSS and JS files
+* ![python django template inheritance settings](python-django-template-inheritance-settings.png "python django template inheritance settings")
+
+### STEP 3. Add APP to the Project Folder settings.py file
+* Add APP to the Project Folder settings.py file
+* Locate the **PROJECTs** `settings.py` file, In this case its located in the 
+  `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_django_templates_inheritance**
+  names to the list **INSTALLED_APPS**
+
+## STEP 4. Create the Django HTML Templates for Inheritance
+* Create file `blocks-caller.html` in the **Base HTML Template**, Place this 
+  in the Templates Folder in the app folder
 * This is the File that Makes Calls to the Template File
 ```
 <!-- File: blocks-caller.html -->
@@ -63,9 +52,12 @@ ContentName: django-template-inheritance
   </body>
 </html>
 ```
-* **Blocks Caller**, Place this in the Templates Folder 
-* This is the Template File that has the **Blocks**, and is inherited
+* Create file `template-blocks.html` **Blocks Caller**, Place this in the 
+  Templates Folder 
+* This is the Template File `template-blocks.html` that has the **Blocks**, 
+  and is inherited
 ```
+<!-- File: template-blocks.html -->
 {% extends 'blocks-caller.html' %}
 
 {% block blue_block %}
@@ -81,14 +73,13 @@ ContentName: django-template-inheritance
 {% endblock %}
 ```
 
-
-### STEP 2. Edit the views.py of the App template_test
+### STEP 5. Edit the views.py of the App template_test
 * Add the **Function** to handle the Template
+
 ```
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
-
 
 # Template Blocks
 def template_blocks(request):
@@ -105,76 +96,66 @@ def template_blocks(request):
 
     return HttpResponse(template.render(context, request))
 # END
-
-# Python Template
-def simple_template_python(request):
-
-    # Create Template Object
-    template = loader.get_template('simple-template.html')
-
-
-    # Data to be passed to template
-    context = {
-        'course_list': ['basic','advanced','web development'],
-        'l_title': 'Welcome to Python Training',
-        'course_name':'PYTHON',
-    }
-
-    return HttpResponse(template.render(context, request))
-# END
-
-    
-# Java Template
-def simple_template_java(request):
-
-    # Create Template Object
-    template = loader.get_template('simple-template.html')
-
-
-    # Data to be passed to template
-    context = {
-        'course_list': ['core','advanced','spring'],
-        'l_title': 'Welcome to Java Training',
-        'course_name':'JAVA',
-    }
-
-    return HttpResponse(template.render(context, request))
-# END
 ```
 
 
-### STEP 3. Edit the urls.py of project and urls.py of the APP
-* Add the APP details to the projects `urls.py`, See "tt" path
+### STEP 6. Edit the Projects urls.py and App urls.py
+* Add the APP details to the **projects** urls.py:
+* `path('app_django_templates_inheritance/', include('app_django_templates_inheritance.urls')),`
 ```
-# File: Projects urls.py
 from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('rootpages.urls')),
-    path('tt/', include('template_test.urls')),
+    path('app_django_templates_inheritance/', include('app_django_templates_inheritance.urls')),
+    path('app_django_html_templates/', include('app_django_html_templates.urls')),
+    path('multiple_views/', include('app_multiple_view_files.urls')),
+    path('app_views/', include('app_views.urls')),
+    path('app_ti/', include('app_ti.urls')),
     path('admin/', admin.site.urls),
 ]
 ```
 
-* Edit the APPs `urls.py`
+* Add **APPs** urls.py with the following contents
 ```
 from django.urls import path
 from . import views
 
 urlpatterns = [
     # For URL: localhost:8000
-    path('st_python', views.simple_template_python, name='st_python'),
-    path('st_java', views.simple_template_java, name='st_java'),
-    path('tblocks', views.template_blocks, name='tblocks'),
+    path('ti_blocks', views.template_blocks, name='template_blocks'),
 ]
 ```
+>
+* **Folder Structure For Templates Inheritance**
+  * `PROJECT`
+  * /tinitiate
+    * /__pycache__
+    * __init__.py
+    * **settings.py**
+    * **urls.py**
+    * wsgi.py       
+  * manage.py
+  * `APP`
+  * /app_django_templates_inheritance
+    * /__pycache__
+    * /migrations
+    * /templates
+      * template-blocks.html
+      * blocks-caller.html
+    * __init__.py
+    * admin.py
+    * apps.py
+    * models.py
+    * tests.py
+    * **urls.py**
+    * **views.py**
+>
 
-
-### STEP 5.Runserver and test Templates
+### STEP 7.Runserver and test Templates
 * At commandline start the project, using the command:
 ```
 python manage.py runserver
 ```
 * Open a browser to test the URLs defined so far
- * localhost:8000/tt/template_blocks
+* localhost:8000/app_django_templates_inheritance/ti_blocks

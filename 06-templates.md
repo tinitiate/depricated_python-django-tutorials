@@ -1,10 +1,10 @@
 ---
 YamlDesc: CONTENT-ARTICLE
 Title: python django templates
-MetaDescription: python django templates, template inheritance, code blocks, if else, loops, example code, tutorials
-MetaKeywords: python django templates, template inheritance, code blocks, if else, loops, example code, tutorials
+MetaDescription: python django templates, code blocks, if else, loops, example code, tutorials
+MetaKeywords: python django templates, code blocks, if else, loops, example code, tutorials
 Author: Venkata Bhattaram / tinitiate.com
-ContentName: django-templates
+ContentName: django-view-templates
 ---
 
 # Django Templates
@@ -18,19 +18,37 @@ ContentName: django-templates
   template contains the static parts of the desired HTML, with substitutable 
   variables.
 
-## Creating Django HTML Templates
+## Demonstration for Django HTML Templates
 
-### STEP 1. Edit Project level settings.py file
+## STEP 1. Create Django APP To Demonstrate Django HTML Templates
+* Navigate to the Project Folder `tinitiate` and in the path that has the 
+  `manage.py` file.
+* Create an **APP** named `app_django_html_templates`
+* Using the following command.
+```
+python manage.py startapp app_django_html_templates
+```
+
+### STEP 2. Edit Project level settings.py file for Template Data
 * Add Template Directory to `TEMPLATES` Dictionary in the projects `settings.py`
-  `'DIRS': ['F:\\DjangoLabs\\training\\tinitiate\\template_test\\templates'],` 
+  `'DIRS': ['F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_django_html_templates\\templates'],`
 * Add Static Files Directory, that will be used to host static libraries like 
-  jQuery or Anguular or custom CSS and JS files
-* ![django template settings](django-template-settings.png "django template settings")
+  jQuery or Angular or custom CSS and JS files
+* ![python django template settings](python-django-template-settings.png "python django template settings")
 
-### STEP 2. Create New App to Demonstrate Using HTML Templates
-* 1. Create a new app using `python manage.py startapp template_test`
-* 2. Create a HTML Template File `simple-template.html` and save it in the folder 
-     mentioned in the settings.py `TEMPLATES` dictionary `DIRS` element
+### STEP 3. Add APP to the Project Folder settings.py file
+* Add APP to the Project Folder settings.py file
+```
+
+```
+
+### STEP 4. Create HTML Template in the Template Folder
+* Create a HTML Template File `simple-template.html` and save it in the folder 
+  mentioned in the settings.py `TEMPLATES` dictionary `DIRS` element
+* In this case use we are using the folder
+  * `F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_django_html_templates\\templates`
+* Folder Structure for templates
+* ![python django template folder](python-django-template-folder.png "python django template folder")
 ```
 <!-- File: simple-template.html -->
 <html>
@@ -63,14 +81,13 @@ ContentName: django-templates
   </body>
 </html>
 ```
-* 3. The Template Language supports Loops and Conditional Statements, All 
-     python Variables such as simple variables, tuples, dictionaries 
-     are supported.
+* The Template Language supports Loops and Conditional Statements, All 
+  python Variables such as simple variables, tuples, dictionaries 
+  are supported.
 
-### STEP 3. Edit the `views.py` of the App `template_test`
+### STEP 5. Edit the `views.py` of the App `app_django_html_templates`
 ```
-# File: views.py of the New App "template_test"
-
+# File: views.py of the New App "app_django_html_templates"
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
@@ -81,14 +98,14 @@ def simple_template_python(request):
     # Create Template Object
     template = loader.get_template('simple-template.html')
 
-
-    # Data to be passed to template
+    # Data (context) to be passed to template
     context = {
         'course_list': ['basic','advanced','web development'],
         'l_title': 'Welcome to Python Training',
         'course_name':'PYTHON',
     }
-
+    
+    # Use the "context" to render the HTML Template to display values
     return HttpResponse(template.render(context, request))
 # END
 
@@ -100,13 +117,14 @@ def simple_template_java(request):
     template = loader.get_template('simple-template.html')
 
 
-    # Data to be passed to template
+    # Data (context) to be passed to template
     context = {
         'course_list': ['core','advanced','spring'],
         'l_title': 'Welcome to Java Training',
         'course_name':'JAVA',
     }
-
+    
+    # Use the "context" to render the HTML Template to display values
     return HttpResponse(template.render(context, request))
 # END
 ```
@@ -114,21 +132,23 @@ def simple_template_java(request):
 * The **Dictionary** elements will be used inside the Template directly, as 
   though the dictionary is part of the template file.
 
-### STEP 4. Edit the urls.py of project and urls.py of the APP
-* Add the APP details to the projects `urls.py`, See "tt" path
+### STEP 6. Edit the Projects urls.py and App urls.py
+* **Add the APP details to the projects urls.py,**
+* `path('app_django_html_templates/', include('app_django_html_templates.urls')),`
 ```
-# File: Projects urls.py
 from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('rootpages.urls')),
-    path('tt/', include('template_test.urls')),
+    path('app_django_html_templates/', include('app_django_html_templates.urls')),
+    path('multiple_views/', include('app_multiple_view_files.urls')),
+    path('app_views/', include('app_views.urls')),
+    path('app_ti/', include('app_ti.urls')),
     path('admin/', admin.site.urls),
 ]
 ```
 
-* Edit the APPs `urls.py`
+* **Add APPs urls.py**
 ```
 from django.urls import path
 from . import views
@@ -137,15 +157,14 @@ urlpatterns = [
     # For URL: localhost:8000
     path('st_python', views.simple_template_python, name='st_python'),
     path('st_java', views.simple_template_java, name='st_java'),
-    path('tblocks', views.template_blocks, name='tblocks'),
 ]
 ```
 
-### STEP 5.Runserver and test Templates
+### STEP 7.Runserver and test Templates
 * At commandline start the project, using the command:
 ```
 python manage.py runserver
 ```
 * Open a browser to test the URLs defined so far
- * localhost:8000/tt/st_java
- * localhost:8000/tt/st_python
+ * localhost:8000/app_django_html_templates/st_java
+ * localhost:8000/app_django_html_templates/st_python

@@ -14,33 +14,15 @@ ContentName: django-tutorials
 * It is scalable and fast, with added security.
 
 
-## [Installation](django-installation.html)
-* Download and install Python
-* Using the `pip` install the Django framework
-* Make sure the computer is connected to the internet, and at the commandline 
-  enter: `pip install django`
-
-## [Creating Django Project](create-project.html)
-* Django Organizes a single website as a project
-* Below are the steps to Create and Run a New Django Project
-
-## [Creating Django Apps](django-apps.html)
-* In Django every **PROJECT** is made up of **APPs**,  They are the independent 
-  control mechanisms to handle pages and sub folders of the web project.
-
-## [Django Views](django-views.html)
-* The VIEW is the webpage itself ina Django project, Its a Web response 
-  Retun object of a python function 
-* The web response (HttpResponse Oject) renders to the HTML.
-
-## [Django Splitting Views Into multiple files](django-apps-multiple-view-files.html)
-* For easy managability and scalability, Django enables users to split the 
-  views.py into multiple files.
-
-## [Django Views Response Types](django-views-response-types.html)
+## Python Django TutotialS
+* [Installation](django-installation.html)
+* [Creating Django Project](create-project.html)
+* [Creating Django Apps](django-apps.html)
+* [Django Views](django-views.html)
+* [Django Splitting Views Into multiple files](django-apps-multiple-view-files.html)
+* [Django Templates](django-view-templates.html)
+* [Django Templates](django-view-templates.html)
+* [Django Views Response Types](django-views-response-types.html)
 *
-*
-
-## [Django Templates](django-templates.html)
-*
-*
+* [Django Custom Management Commands](django-custom-management-commands.html)
+* ref : https://simpleisbetterthancomplex.com/tutorial/2018/08/27/how-to-create-custom-django-management-commands.html
