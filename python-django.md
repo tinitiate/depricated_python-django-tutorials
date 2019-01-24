@@ -20,9 +20,19 @@ ContentName: django-tutorials
 * [Creating Django Apps](django-apps.html)
 * [Django Views](django-views.html)
 * [Django Splitting Views Into multiple files](django-apps-multiple-view-files.html)
-* [Django Templates](django-view-templates.html)
-* [Django Templates](django-view-templates.html)
+* [Django Templates](django-view-templates.html) django-view-templates
+* [Django Template Inheritance](django-template-inheritance.html)
+* [Django URLs](django-urls.html)
 * [Django Views Response Types](django-views-response-types.html)
-*
+* [Django Views Models](django-models.html)
+* ORM Joins
+* Data Persistance Api
+* Forms
+* Sessions
+* Cookies
+* Web Serivces
+* Transactions
+* Message Queue
+* Site Admin
 * [Django Custom Management Commands](django-custom-management-commands.html)
 * ref : https://simpleisbetterthancomplex.com/tutorial/2018/08/27/how-to-create-custom-django-management-commands.html

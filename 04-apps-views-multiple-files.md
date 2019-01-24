@@ -85,7 +85,6 @@ def bday(request, in_data):
 
 ## STEP 4. APP folder urls.py Configuration
 * Create an new file `urls.py` in the APP folder
-* ![django app create urls](django-app-create-urls-py.png "django app create urls")
 * Add the following code
 * The APP Folders `urls.py` imports the view files from the `views` folder
   * `from .views import greetings`

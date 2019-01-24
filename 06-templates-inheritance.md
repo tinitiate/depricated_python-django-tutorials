@@ -14,7 +14,7 @@ ContentName: django-template-inheritance
 
 ## Demonstration for Django HTML Template Inheritance
 
-## STEP 1. Create Django APP To Demonstrate Django HTML Templates
+### STEP 1. Create Django APP To Demonstrate Django HTML Templates
 * Navigate to the Project Folder `tinitiate` and in the path that has the 
   `manage.py` file.
 * Create an **APP** named `app_django_templates_inheritance`
@@ -28,7 +28,6 @@ python manage.py startapp app_django_templates_inheritance
   `'DIRS': ['F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_django_html_templates\\templates'],`
 * Add Static Files Directory, that will be used to host static libraries like 
   jQuery or Angular or custom CSS and JS files
-* ![python django template inheritance settings](python-django-template-inheritance-settings.png "python django template inheritance settings")
 
 ### STEP 3. Add APP to the Project Folder settings.py file
 * Add APP to the Project Folder settings.py file
@@ -140,7 +139,7 @@ urlpatterns = [
   * /app_django_templates_inheritance
     * /__pycache__
     * /migrations
-    * /templates
+    * **/templates**
       * template-blocks.html
       * blocks-caller.html
     * __init__.py
