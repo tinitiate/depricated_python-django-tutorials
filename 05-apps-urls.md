@@ -7,89 +7,140 @@ Author: Venkata Bhattaram / tinitiate.com
 ContentName: django-apps-urls
 ---
 
+# Django URLs
+* URLs or **Uniform Resource Locator** is the WebAddress, Thesse are the endpoints 
+  with which the user accesses the functions from **views.py**.
+* Demonstration of URLs mapping to **view.py** function by the following:
+  * **Home Page or Root Page**
+  * **By URL Name**
+  * **By URL Pattern**
+* Folder Structure
+![python django urls demo folder structure](python-django-urls-demo-folder-structure.png "python django urls demo folder structure")
 
-# Django APPs
-* In Django every **PROJECT** is made up of **APPs**,  They are the independent 
-  control mechanisms to handle pages and sub folders of the web project.
+## Django Home Page or Root Page
 
-  
-## STEP 1. Create Django APP
-* Navigate to the Project Folder and in the path that has the `manage.py` file
-* Create an **APP** named `rootpages`, which will manage the `Root Level Pages`
+### STEP 1. Create Django APP To Demonstrate Home Page
+* Navigate to the Project Folder `tinitiate` and in the path that has the 
+  `manage.py` file.
+* Create an **APP** named `app_home`
 * Using the following command.
 ```
-python manage.py startapp rootpages
+python manage.py startapp app_home
 ```
 
-
-## STEP 2. Check APP Folder and Files
+### STEP 2. Check APP Folder and Files
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
-  `tinitiate/tinitiate/settings.py` file, Append the **APP** names to the 
-  list **INSTALLED_APPS**  we created in **STEP 3**
-![django app folder structure](django-app-folder-structure.png "django app folder structure")
+  `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_home**
+  names to the list **INSTALLED_APPS**
 
-
-## STEP 3. Add content to the views.py file
-* Django supports the **Model View Template (MVT)** pattern of web pages
-  * The MVT is defined as the **Model** The data (Usually from a DataBase or 
-    User Input) that needs to be displayed in the web page.
-    * **VIEWS**
-    * The VIEW is the webpage itself, Here the HttpResponse renders to the HTML.
-    * Here we demonstrate A simple view creates a Text Response, `homepage`
-    * Also a demonstration of a VIEW with parameter
+### STEP 3. views.py file
+* Here we demonstrate URL patterns
 ```
+from django.shortcuts import render
 from django.http import HttpResponse
 
-def homepage(request):
-    return HttpResponse("Welcome to Tinitiate Django Test Home Page Version 1.0")
+def home(request):
+    return HttpResponse("Welcome to Tinitiate Django Home Page from the APP: app_home !!")
 
-def param_test(request, in_data):
-    response = "Data Provided: " + str(in_data)
-    return HttpResponse(response)
-
-def even_or_odd(request, in_number):
-    
-    s_data = str(in_number)
-    
-    if (in_number%2) == 0:
-        response = s_data + " is a even number"
-    else:
-        response = s_data + " is a odd number"
-
-    return HttpResponse(response)
 ```
 
-
-## STEP 4. APP folder urls.py Configuration
+### STEP 4. APP folder urls.py Configuration
 * Create an new file `urls.py` in the APP folder
-* ![django app create urls](django-app-create-urls-py.png "django app create urls")
 * Add the following code
 ```
+from django.conf.urls import url
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    # For URL: localhost:8000 and view function: homepage
-    path('', views.homepage, name='homepage'),
-    # For URL: localhost:8000/param_test and view function: param_test
-    # Usage Example URL: localhost:8000/param_test/1
-    path('param_test/<int:in_data>', views.param_test, name='param_test'),
-    # For URL: localhost:8000/even_or_odd and view function: even_or_odd
-    # Usage Example URL: localhost:8000/even_or_odd/1
-    path('even_or_odd/<int:in_number>', views.even_or_odd, name='even_or_odd'),
+    # For URL: localhost:8000/ and view function: home
+    # Usage Example URL: localhost:8000
+    path('', views.home, name='home'),
 ]
 ```
 
 
-## STEP 5. PROJECT folder urls.py Configuration
-* Create an empty file `urls.py`
+## Django URL Pattern and Name
+
+### STEP 1. Create Django APP To Demonstrate URL Patterns and Page by Name
+* Navigate to the Project Folder `tinitiate` and in the path that has the 
+  `manage.py` file.
+* Create an **APP** named `app_urls`
+* Using the following command.
+```
+python manage.py startapp app_urls
+```
+
+### STEP 2. Check APP Folder and Files
+* Locate the **PROJECTs** `settings.py` file, In this case its located in the 
+  `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_urls**
+  names to the list **INSTALLED_APPS**
+  
+### STEP 3. views.py file
+* Here we demonstrate URL patterns
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def message(request):
+    return HttpResponse("Welcome to Tinitiate Django message page")
+
+def year_month(request, in_year, in_month):
+    response = "Input Year: " + str(in_year) + " Input Month: " + str(in_month)
+    return HttpResponse(response)
+
+def slug_test(request, in_slug):
+    response = "Input Slug: " + in_slug
+    return HttpResponse(response)
+```
+
+### STEP 4. APP folder urls.py Configuration
+* Create an new file `urls.py` in the APP folder
+* The following demonstrates
+  * **PATH** Standard URL Paths with and without parameters.
+  * **RE_PATH** URL Paths which support Regular Expressions, with and without 
+    parameters.
+  * **Include** Include URLs from other APPs, in this case the **APP_HOME**
+    in the current APP **APP_URLS**.
+```
+from django.conf.urls import include, url
+from django.urls import path, re_path
+
+from . import views
+# import app_views #import urls as app_views_urls
+
+urlpatterns = [
+    # Path
+    path('message/', views.message, name='message'),
+    path('slug_test/<slug:in_slug>/', views.slug_test),
+
+    # RegEx Path    
+    re_path(r'^year_month/(?P<in_year>[0-9]{4})/(?P<in_month>[0-9]{2})/$', views.year_month),
+    
+    # Include
+    url('include_test/', include('app_views.urls')),
+]
+```
+>
+
+## Common Steps for both the above demonstration
+### COMMON STEP 1. PROJECT folder urls.py Configuration
+* The Pattern for path `path('^$', include('app_home.urls')),`, Indicates this 
+  is the Root page or the Home Page.
 * Add the following code
 ```
 from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('rootpages.urls')),
+    # HOME PAGE
+    path('^$', include('app_home.urls')),
+    path('app_urls/', include('app_urls.urls')),
+    path('app_django_templates_inheritance/', include('app_django_templates_inheritance.urls')),
+    path('app_django_html_templates/', include('app_django_html_templates.urls')),
+    path('multiple_views/', include('app_multiple_view_files.urls')),
+    path('app_views/', include('app_views.urls')),
+    path('app_ti/', include('app_ti.urls')),
     path('admin/', admin.site.urls),
 ]
 ```
@@ -99,15 +150,15 @@ urlpatterns = [
 * The `return HttpResponse` in the functions accepts a string and returns 
   HTML, which is browser readable.
 * In the `urls.py` the URL pattern is associated to the view.<function-name>
-
+>
 
 ## STEP 6. Run Project and Test URLS in Browser
 * At commandline start the project, using the command:
 ```
 python manage.py runserver
 ```
+* **TESTING**
 * Open a browser to test the URLs defined so far
- * localhost:8000
- * localhost:8000/param_test/1
- * localhost:8000/even_or_odd/4
- * localhost:8000/even_or_odd/5
+  * For Home Page Use: `localhost:8000/`
+  * For Regular Expressions parameters Page Use: `localhost:8000/app_urls/year_month/2002/11/`
+  * For Include URLs from other apps Use: `localhost:8000/app_urls/include_test/view_no_param/`
