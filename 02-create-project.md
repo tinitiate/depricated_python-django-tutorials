@@ -22,8 +22,8 @@ mkdir F:\DjangoLabs\training
 
 
 ## STEP 2. Create Django Project
-* Change to the folder path in commandline and run the following to create a 
-  new django project
+* At the in the Target Project folder in this case `F:\DjangoLabs\training` 
+  Command Prompt and run the following to create a new django project.
 ```
 django-admin startproject tinitiate
 ```

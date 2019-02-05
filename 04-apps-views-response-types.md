@@ -25,20 +25,21 @@ ContentName: django-apps-view-response-types
 python manage.py startapp app_response_types
 ```
 
-## STEP 2. Check APP Folder and Files
+## STEP 2. Add APP details to Project settings.py file
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
-  `tinitiate/tinitiate/settings.py` file, Append the **APP** names to the 
-  list **INSTALLED_APPS**  we created in **STEP 3**
+  `tinitiate/tinitiate/settings.py` file, Append the **APP app_response_types** names to the 
+  list **INSTALLED_APPS**  we created in **STEP 1**
 ![django app folder structure](django-app-folder-structure.png "django app folder structure")
 
 ## STEP 3. Create views.py file with different Response Types
 * Here we create a `views.py` file with various methods demonstrating 
   various Response Types.
 * Here we demonstrate 
-  * View with 
-  * View with 
-  * View with 
-  * View with   
+  * View Returning plain text 
+  * View Returning xml text
+  * View Returning html (Rich Text) 
+  * View Returning json
+  * View Streaming HTTP Response
 ```
 from django.shortcuts import render
 from django.http import HttpResponse, FileResponse, JsonResponse, StreamingHttpResponse
@@ -111,7 +112,7 @@ urlpatterns = [
 ]
 ```
 
-## STEP 5. PROJECT folder urls.py Configuration
+## STEP 5. Add APP to the PROJECT urls.py file
 * Create an empty file `urls.py`
 * Add the following code
 ```
@@ -139,6 +140,8 @@ urlpatterns = [
 
 
 ## STEP 6. Run Project and Test URLS in Browser
+* In the command line go back to the project folder and locate the manage.py 
+  and run the command to start the django application
 * At commandline start the project, using the command:
 ```
 python manage.py runserver

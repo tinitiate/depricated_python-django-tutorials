@@ -29,7 +29,7 @@ python manage.py startapp app_django_templates_inheritance
 * Add Static Files Directory, that will be used to host static libraries like 
   jQuery or Angular or custom CSS and JS files
 
-### STEP 3. Add APP to the Project Folder settings.py file
+### STEP 3. Add APP details to Project settings.py file
 * Add APP to the Project Folder settings.py file
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
   `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_django_templates_inheritance**

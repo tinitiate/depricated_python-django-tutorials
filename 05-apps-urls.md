@@ -28,7 +28,7 @@ ContentName: django-apps-urls
 python manage.py startapp app_home
 ```
 
-### STEP 2. Check APP Folder and Files
+### STEP 2. Add APP details to Project settings.py file
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
   `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_home**
   names to the list **INSTALLED_APPS**
@@ -44,7 +44,7 @@ def home(request):
 
 ```
 
-### STEP 4. APP folder urls.py Configuration
+### STEP 4. Add APP to the PROJECT urls.py file
 * Create an new file `urls.py` in the APP folder
 * Add the following code
 ```
@@ -71,7 +71,7 @@ urlpatterns = [
 python manage.py startapp app_urls
 ```
 
-### STEP 2. Check APP Folder and Files
+### STEP 2. Add APP details to Project settings.py file
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
   `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_urls**
   names to the list **INSTALLED_APPS**
@@ -94,7 +94,7 @@ def slug_test(request, in_slug):
     return HttpResponse(response)
 ```
 
-### STEP 4. APP folder urls.py Configuration
+### STEP 4. Add APP to the PROJECT urls.py file
 * Create an new file `urls.py` in the APP folder
 * The following demonstrates
   * **PATH** Standard URL Paths with and without parameters.

@@ -29,7 +29,7 @@ ContentName: django-view-templates
 python manage.py startapp app_django_html_templates
 ```
 
-### STEP 2. Edit Project level settings.py file for Template Data
+### STEP 2. Add APP details to Project settings.py file
 * Add Template Directory to `TEMPLATES` Dictionary in the projects `settings.py`
   `'DIRS': ['F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_django_html_templates\\templates'],`
 * Add Static Files Directory, that will be used to host static libraries like 
@@ -37,10 +37,9 @@ python manage.py startapp app_django_html_templates
 * ![python django template settings](python-django-template-settings.png "python django template settings")
 
 ### STEP 3. Add APP to the Project Folder settings.py file
-* Add APP to the Project Folder settings.py file
-```
-
-```
+* Locate the **PROJECTs** `settings.py` file, In this case its located in the 
+  `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_django_html_templates**
+  names to the list **INSTALLED_APPS**
 
 ### STEP 4. Create HTML Template in the Template Folder
 * Create a HTML Template File `simple-template.html` and save it in the folder 
@@ -132,7 +131,7 @@ def simple_template_java(request):
 * The **Dictionary** elements will be used inside the Template directly, as 
   though the dictionary is part of the template file.
 
-### STEP 6. Edit the Projects urls.py and App urls.py
+### STEP 6. Edit the Projects urls.py file and App urls.py file
 * **Add the APP details to the projects urls.py,**
 * `path('app_django_html_templates/', include('app_django_html_templates.urls')),`
 ```

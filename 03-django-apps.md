@@ -27,15 +27,29 @@ python manage.py startapp app_ti
 ![python django app folder structure](python-django-app-folder-structure.png "python django app folder structure")
 >
 
-
-## STEP 2. Add the APP to the PROJECT settings
+## STEP 2. Add APP details to Project settings.py file
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
   `tinitiate/tinitiate/settings.py` file, Append the **APP** name `app_ti` to 
   the list **INSTALLED_APPS**
 ![python project app settings](python-project-app-settings.png "python project app settings")
 
 
-## STEP 3. Add content to the views.py file
+## STEP 3. Add APP to the PROJECT urls.py file
+* The Path to the URL from ROOT URL **localhost** or **www.MY-DOMAIN.COM** 
+  is the APP Folder, That can be specified in the `urls.py`
+* In the Project folder `tinitiate` locate the `urls.py`
+* Add the following code
+```
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('app_ti', include('app_ti.urls')),
+    path('admin/', admin.site.urls),
+]
+```
+
+## STEP 4. Add content to the APPs views.py file
 * Django supports the **Model View Template (MVT)** pattern of web pages
   * The MVT is defined as the **Model** The data (Usually from a DataBase or 
     User Input) that needs to be displayed in the web page.
@@ -51,9 +65,9 @@ def app_home(request):
 ```
 
 
-## STEP 4. APP folder urls.py Configuration
+## STEP 5. APP folder urls.py Configuration
 * Create an new file `urls.py` in the APP `app_ti` folder
-* ![django app create urls](django-app-create-urls-py.png "django app create urls")
+![python django app folder urls.py](python-django-app-folder-urls-py.png "python django app folder urls.py")
 * Add the following code
 ```
 from django.urls import path
@@ -62,22 +76,6 @@ from . import views
 urlpatterns = [
     # For URL: localhost:8000 and view function: app_home
     path('', views.app_home, name='app_home'),
-]
-```
-
-
-## STEP 5. PROJECT folder urls.py Configuration
-* The Path to the URL from ROOT URL **localhost** or **www.MY-DOMAIN.COM** 
-  is the APP Folder, That can be specified in the `urls.py`
-* In the Project folder `tinitiate` locate the `urls.py`
-* Add the following code
-```
-from django.contrib import admin
-from django.urls import include, path
-
-urlpatterns = [
-    path('app_ti', include('app_ti.urls')),
-    path('admin/', admin.site.urls),
 ]
 ```
 

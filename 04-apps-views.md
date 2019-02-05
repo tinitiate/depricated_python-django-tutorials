@@ -23,11 +23,10 @@ ContentName: django-apps-views
 python manage.py startapp app_views
 ```
 
-
-## STEP 2. Check APP Folder and Files
+## STEP 2. Project Folder settings.py changes
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
-  `tinitiate/tinitiate/settings.py` file, Append the **APP** names to the 
-  list **INSTALLED_APPS**  we created in **STEP 3**
+  `tinitiate/tinitiate/settings.py` file, Append the **APP app_views** name to the 
+  list **INSTALLED_APPS**  we created in **STEP 1**
 ![django app folder structure](django-app-folder-structure.png "django app folder structure")
 
 
@@ -95,7 +94,7 @@ urlpatterns = [
 ```
 
 
-## STEP 5. PROJECT folder urls.py Configuration
+## STEP 5. Add APP to the PROJECT urls.py file
 * Create an empty file `urls.py`
 * Add the following code
 ```

@@ -18,17 +18,19 @@ ContentName: django-tutorials
 * [Installation](django-installation.html)
 * [Creating Django Project](create-project.html)
 * [Creating Django Apps](django-apps.html)
-* [Django Views](django-views.html)
+* [Django Views](django-apps-views.html)
 * [Django Splitting Views Into multiple files](django-apps-multiple-view-files.html)
 * [Django Templates](django-view-templates.html) django-view-templates
 * [Django Template Inheritance](django-template-inheritance.html)
-* [Django URLs](django-urls.html)
-* [Django Views Response Types](django-views-response-types.html)
+* [Django URLs](django-apps-urls.html)
+* [Django Views Response Types](django-view-response-types.html)
 * [Django Views Models](django-models.html)
-* ORM Joins
-* Data Persistance Api
-* Forms
-* Sessions
+* [ORM Joins]
+* [Data Persistance API]
+* [Django Simple Forms](django-simple-forms.html)
+* [Django Widget Forms](django-widget-forms.html)
+* [Django Model Forms](django-model-forms.html)
+* Login and Sessions
 * Cookies
 * Web Serivces
 * Transactions

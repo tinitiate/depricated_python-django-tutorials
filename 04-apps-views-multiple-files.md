@@ -24,10 +24,10 @@ python manage.py startapp app_multiple_view_files
 ```
 >
 
-## STEP 2. Check APP Folder and Files
+## STEP 2. Add APP details to Project settings.py file
 * Locate the **PROJECTs** `settings.py` file, In this case its located in the 
   `tinitiate/tinitiate/settings.py` file, Append the **APP NAME app_multiple_view_files**
-  names to the list **INSTALLED_APPS**
+  name to the list **INSTALLED_APPS**
 >
 
 ## STEP 3. Create the VIEWS FOLDER
@@ -115,7 +115,7 @@ urlpatterns = [
 ```
 >
 
-## STEP 5. PROJECT folder urls.py Configuration
+## STEP 5. Add APP to the PROJECT urls.py file
 * Create an empty file `urls.py`
 * Add the following code
 ```
