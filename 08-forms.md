@@ -70,7 +70,9 @@ class TestForm(forms.Form):
     CheckBox = forms.MultipleChoiceField(choices=form_choices, widget=forms.CheckboxSelectMultiple)
 ```
 
-### STEP 4. HTML Template for FORM rendering
+### STEP 4. HTML Template for FORM rendering `post_inputs.html` file
+* This is the `post_inputs.html` file that will be rendered, with the form data.
+* This form will have provisions to input user data and choices.
 ```
 <form method="post" action="">
 
@@ -101,7 +103,8 @@ class TestForm(forms.Form):
 </form>
 ```
 
-### STEP 5. HTML Template for FORM Submit rendering after POST action
+### STEP 5. HTML Template for output.html file FORM Submit rendering after POST action
+* This is the `output.html` file which will be rendered after the form submission.
 ```
 <html>
     <body>
