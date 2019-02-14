@@ -24,15 +24,17 @@ ContentName: django-tutorials
 * [Django Template Inheritance](django-template-inheritance.html)
 * [Django URLs](django-apps-urls.html)
 * [Django Views Response Types](django-view-response-types.html)
-* [Django Views Models](django-models.html)
-* [ORM Joins]
-* [Data Persistance API]
+-----------------
+>>>> * [Django Views Models](django-models.html)
+>>>> * [ORM Joins]
+>>>> * [Data Persistance API]
+-----------------
 * [Django Simple Forms](django-simple-forms.html)
-* [Django Widget Forms](django-widget-forms.html)
-* [Django Model Forms](django-model-forms.html)
-* Login and Sessions
-* Cookies
-* Web Serivces
+>>>> * [Django Model Forms](django-model-forms.html)
+* [Django Cookies](django-apps-cookies.html)
+
+>>>> * [Django Rest WebServices](django-rest-webservices.html)
+>>>> * Login and Sessions
 * Transactions
 * Message Queue
 * Site Admin

@@ -4,7 +4,7 @@ Title: python django restful web services tutorials
 MetaDescription: python django restful web services tutorials
 MetaKeywords: python, django, restful, web services, tutorials
 Author: Venkata Bhattaram / tinitiate.com
-ContentName: django-rest-webservice
+ContentName: django-rest-webservices
 ---
 
 # Django Restful Web Services
