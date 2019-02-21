@@ -1,6 +1,6 @@
 ---
 YamlDesc: CONTENT-ARTICLE
-Title: python django templates
+Title: python django template inheritance
 MetaDescription: python django templates, template inheritance, code blocks, if else, loops, example code, tutorials
 MetaKeywords: python django templates, template inheritance, code blocks, if else, loops, example code, tutorials
 Author: Venkata Bhattaram / tinitiate.com

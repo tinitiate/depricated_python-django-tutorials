@@ -16,27 +16,26 @@ ContentName: django-tutorials
 
 ## Python Django TutotialS
 * [Installation](django-installation.html)
-* [Creating Django Project](create-project.html)
-* [Creating Django Apps](django-apps.html)
+* [Django Project](create-project.html)
+* [Django Apps](django-apps.html)
 * [Django Views](django-apps-views.html)
-* [Django Splitting Views Into multiple files](django-apps-multiple-view-files.html)
+* [Django Splitting Views Into Multiple Files](django-apps-multiple-view-files.html)
 * [Django Templates](django-view-templates.html) django-view-templates
 * [Django Template Inheritance](django-template-inheritance.html)
 * [Django URLs](django-apps-urls.html)
 * [Django Views Response Types](django-view-response-types.html)
 -----------------
->>>> * [Django Views Models](django-models.html)
->>>> * [ORM Joins]
->>>> * [Data Persistance API]
+>>>> * [Django Models](django-models.html)
+>>>> * [Django ORM]
+>>>> * [Django Data Persistance API]
 -----------------
 * [Django Simple Forms](django-simple-forms.html)
 >>>> * [Django Model Forms](django-model-forms.html)
 * [Django Cookies](django-apps-cookies.html)
-
->>>> * [Django Rest WebServices](django-rest-webservices.html)
->>>> * Login and Sessions
-* Transactions
-* Message Queue
-* Site Admin
-* [Django Custom Management Commands](django-custom-management-commands.html)
-* ref : https://simpleisbetterthancomplex.com/tutorial/2018/08/27/how-to-create-custom-django-management-commands.html
+* [Django Rest WebServices](django-rest-webservices.html)
+* [Django Sessions](django-sessions.html)
+-----------------
+>>>> * [Django Site Administration](django-site-administration.html)
+>>>> * [Django Custom Management Commands](django-custom-management-commands.html)
+>>>> * ref : https://simpleisbetterthancomplex.com/tutorial/2018/08/27/how-to-create-custom-django-management-commands.html
+>>>> * Message Queue

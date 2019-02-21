@@ -1,6 +1,6 @@
 ---
 YamlDesc: CONTENT-ARTICLE
-Title: python django apps
+Title: python django app multiple view files
 MetaDescription: python django apps, split views into multiple files example code, tutorials
 MetaKeywords: python django apps, split views into multiple files  example code, tutorials
 Author: Venkata Bhattaram / tinitiate.com

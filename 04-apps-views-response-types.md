@@ -1,6 +1,6 @@
 ---
 YamlDesc: CONTENT-ARTICLE
-Title: python django apps
+Title: python django apps view response types
 MetaDescription: python django apps view response types example code, tutorials
 MetaKeywords: python django apps view response types  example code, tutorials
 Author: Venkata Bhattaram / tinitiate.com

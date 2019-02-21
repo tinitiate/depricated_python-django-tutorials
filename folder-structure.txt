@@ -1,0 +1,13 @@
+```
+/tinitiate                   [PROJECT FOLDER]
+..../app-{app-name}          [APP FOLDER]
+......../templates           [APP TEMPLATES FOLDER]
+............template.html    [APP TEMPLATES HTML FILES]
+........forms.py             [APP LEVEL FORMS.PY]
+........urls.py              [APP LEVEL URLS.PY]
+........views.py             [APP LEVEL VIEWS.PY]
+..../tinitiate               [PROJECT SETTINGS FOLDER]
+........urls.py              [PROJECT LEVEL URLS.PY]
+........settings.py          [PROJECT LEVEL SETTINGS.PY]
+manage.py                    [MANAGE.PY FILE]
+```

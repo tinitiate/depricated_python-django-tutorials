@@ -1,6 +1,6 @@
 ---
 YamlDesc: CONTENT-ARTICLE
-Title: python django apps
+Title: python django app views
 MetaDescription: python django apps, views example code, tutorials
 MetaKeywords: python django apps, views example code, tutorials
 Author: Venkata Bhattaram / tinitiate.com

@@ -1,6 +1,6 @@
 ---
 YamlDesc: CONTENT-ARTICLE
-Title: python django apps
+Title: python django apps cookies
 MetaDescription: python django apps, cookies code, tutorials
 MetaKeywords: python django apps, cookies code, tutorials
 Author: Venkata Bhattaram / tinitiate.com
@@ -38,7 +38,7 @@ python manage.py startapp app_cookies
 * Create a HTML Template File `simple-template.html` and save it in the folder 
   mentioned in the settings.py `TEMPLATES` dictionary `DIRS` element
 * In this case use we are using the folder
-  * `F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_django_html_templates\\templates`
+  * `F:\\code\\tinitiate\\source\\python-django\\code\\tinitiate\\app_cookies\\templates`
 * Folder Structure for templates
 * ![python django template folder](python-django-template-folder.png "python django template folder")
 * Place the Template file `mycart.html` in the template folder of the APP
