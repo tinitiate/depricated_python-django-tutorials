@@ -120,26 +120,29 @@ offers = 1
   and `management/commands` folders
 * In our app `app_management_commands`, we create `management` and 
   `management/commands` folders
-* Below is the folder structure for the Management Commands  
-  * tinitiate/                              <-- Django Project Folder
-  *  |-- app_management_commands/           <-- Django App Folder
-  *  |    |-- management/
-  *  |    |    +-- commands/
-  *  |    |         +-- current_time.py  <-- Print the current time
-  *  |    |         +-- offer_control.py <-- Enable / Disable a page from the view
-  *  |    |-- migrations/
-  *  |    |    +-- __init__.py
-  *  |    |-- __init__.py
-  *  |    |-- admin.py
-  *  |    |-- apps.py
-  *  |    |-- tests.py
-  *  |    +-- views.py
-  *  |-- tinitiate/
-  *  |    |-- __init__.py
-  *  |    |-- settings.py
-  *  |    |-- urls.py
-  *  |    |-- wsgi.py
-  *  +-- manage.py
+* Below is the folder structure for the Management Commands
+```
+tinitiate/                              <-- Django Project Folder
+ |-- app_management_commands/           <-- Django App Folder
+ |    |-- management/
+ |    |    +-- commands/
+ |    |         +-- current_time.py  <-- Print the current time
+ |    |         +-- offer_control.py <-- Enable / Disable a page from the view
+ |    |-- migrations/
+ |    |    +-- __init__.py
+ |    |-- __init__.py
+ |    |-- admin.py
+ |    |-- apps.py
+ |    |-- tests.py
+ |    +-- views.py
+ |-- tinitiate/
+ |    |-- __init__.py
+ |    |-- settings.py
+ |    |-- urls.py
+ |    |-- wsgi.py
+ +-- manage.py
+```
+  
 >
 * Add the first management-command `current_time.py`
 * Management Command has a `Command Class` and the method `handle`
