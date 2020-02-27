@@ -40,7 +40,7 @@ python manage.py startapp app_response_types
   * View Returning html (Rich Text) 
   * View Returning json
   * View Streaming HTTP Response
-```
+```python
 from django.shortcuts import render
 from django.http import HttpResponse, FileResponse, JsonResponse, StreamingHttpResponse
 import csv
@@ -98,7 +98,7 @@ def streaming_http_response(queryset):
 ## STEP 4. APP folder urls.py Configuration
 * Create an new file `urls.py` in the APP folder
 * Add the following code
-```
+```python
 from django.urls import path
 from . import views
 
@@ -115,7 +115,7 @@ urlpatterns = [
 ## STEP 5. Add APP to the PROJECT urls.py file
 * Create an empty file `urls.py`
 * Add the following code
-```
+```python
 from django.contrib import admin
 from django.urls import include, path
 
