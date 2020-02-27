@@ -39,7 +39,7 @@ python manage.py startapp app_ti
   is the APP Folder, That can be specified in the `urls.py`
 * In the Project folder `tinitiate` locate the `urls.py`
 * Add the following code
-```
+```python
 from django.contrib import admin
 from django.urls import include, path
 
@@ -57,7 +57,7 @@ urlpatterns = [
     * The VIEW is the webpage itself, Here the HttpResponse renders to the HTML.
     * Here we demonstrate A simple view creates a Text Response, `app_home`
 * In the `app_ti` folder locate the `views.py` file and add the following
-```
+```python
 from django.http import HttpResponse
 
 def app_home(request):
@@ -69,7 +69,7 @@ def app_home(request):
 * Create an new file `urls.py` in the APP `app_ti` folder
 ![python django app folder urls.py](python-django-app-folder-urls-py.png "python django app folder urls.py")
 * Add the following code
-```
+```python
 from django.urls import path
 from . import views
 
