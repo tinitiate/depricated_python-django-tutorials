@@ -41,13 +41,13 @@ python manage.py startapp app_multiple_view_files
 >
 >
 * __init__.py File Code
-```
+```python
 from .calc import *
 from .greetings import *
 ```
 >
 * `calc.py` File Code
-```
+```python
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -69,7 +69,7 @@ def even_or_odd(request, in_number):
 ```
 >
 * `greetings.py` File Code
-```
+```python
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -89,7 +89,7 @@ def bday(request, in_data):
 * The APP Folders `urls.py` imports the view files from the `views` folder
   * `from .views import greetings`
   * `from .views import calc`
-```
+```python
 from django.conf.urls import url
 from django.urls import path
 from .views import greetings
@@ -118,7 +118,7 @@ urlpatterns = [
 ## STEP 5. Add APP to the PROJECT urls.py file
 * Create an empty file `urls.py`
 * Add the following code
-```
+```python
 from django.contrib import admin
 from django.urls import include, path
 
