@@ -6,6 +6,24 @@ MetaKeywords: Python Django Create Project, run django project, Create HomePage,
 Author: Venkata Bhattaram / tinitiate.com
 ContentName: create-project
 ---
+```
+    |---  manage.py
+    |--- /tinitiate             [PROJECT-FOLDER]
+         |--- __init__.py
+         |--- **settings.py**
+         |--- **urls.py**
+         |--- wsgi.py
+         |--- /app              [APP-FOLDER]
+              |--- __init__.py
+              |--- admin.py
+              |--- apps.py
+              |--- urls.py
+              |--- views.py
+              |--- models.py
+              |--- forms.py
+              |--- tests.py
+              |--- wsgi.py
+```
 
 # Python Django Project
 * Django Organizes a single website as a project
