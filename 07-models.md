@@ -168,9 +168,9 @@ create table students_courses
 * Generate Django Models from existing Database Tables
 * Navigate to the `projects/manage.py` and run the below commands
 ```bash
-python manage.py inspectdb students > app_models/model_students.py
-python manage.py inspectdb courses > app_models/model_courses.py
-python manage.py inspectdb students_courses > app_models/model_students_courses.py
+python manage.py inspectdb --database=mysql_db students > app_models/model_students.py
+python manage.py inspectdb --database=mysql_db courses > app_models/model_courses.py
+python manage.py inspectdb --database=mysql_db students_courses > app_models/model_students_courses.py
 ``` 
 * The above commands will create the `models.py` file to the `project` folder
 
