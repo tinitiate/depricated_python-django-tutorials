@@ -201,6 +201,9 @@ urlpatterns = [
 ## STEP 7. Run Project and Test URLS in Browser
 * At commandline start the project, using the command:
 ```
+# Sometimes you might have to run the makemigrations and migrate
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
 ```
 * Open a browser and enter the following URLS to see the various phases 
