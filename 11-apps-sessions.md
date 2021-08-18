@@ -209,6 +209,6 @@ python manage.py runserver
 * Open a browser and enter the following URLS to see the various phases 
   of the SESSION KEY.
 * Login using the URL:  `http://localhost:8000/app_sessions/login`
-* This will be displayed after **LOGIN**: `http://localhost:8000/app_cookies/secured_page`
-* Delete Session Key using: `http://localhost:8000/app_cookies/logout`
-* Trying after **LOGOUT** you cannot access the secure page: `http://localhost:8000/app_cookies/secured_page`
+* This will be displayed after **LOGIN**: `http://localhost:8000/app_sessions/secured_page`
+* Delete Session Key using: `http://localhost:8000/app_sessions/logout`
+* Trying after **LOGOUT** you cannot access the secure page: `http://localhost:8000/app_sessions/secured_page`
