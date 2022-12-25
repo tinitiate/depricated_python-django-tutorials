@@ -1,2 +1,5 @@
-# python-django-tutorials
-python-django-tutorials
+manusha
+swamypatel
+naresh
+satwika
+gouthami
